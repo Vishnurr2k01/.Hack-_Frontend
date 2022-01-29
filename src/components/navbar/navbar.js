@@ -4,11 +4,11 @@ import Signup from '../Modals/Signup/Signup';
 import Login from '../Modals/Login/Login';
 import logo from '../../assets/images/logo.png'
 
-function Navbar() {
+function Navbar({ station }) {
     return <div className='navbar'>
         <div className="nav__left">
             <img src={logo} alt="" />
-            <p>Trivandrum</p>
+            <p> {station ? `${station}` : "Location"} </p>
         </div>
         <div className="nav__right">
             <ul>

@@ -5,7 +5,7 @@ import data from '../../assets/Data/data'
 import { AiOutlineSearch } from 'react-icons/ai'
 import Categories from './categories';
 
-function Dine() {
+function Dine({station}) {
     const categories = ["Breakfast", "Lunch", "Dinner", "Dessert"]
     const [catName, setCatName] = useState("Breakfast")
 
@@ -41,7 +41,7 @@ function Dine() {
             <div className="dine__header__right">
                 <h2>
                     What do you have a
-                    taste for?
+                    taste for? {station}
                 </h2>
 
                 <div className="dine__search">
