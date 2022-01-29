@@ -19,10 +19,10 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Routes>
-          <Route exact path="/" element={<><Navbar /><Home /></>} />
-          <Route exact path="/fortrain" element={<><Navbar /><TrainHome /></>} />
-          <Route exact path="/order" element={<><Navbar /><Dine /></>} />
-          <Route exact path="/cart" element={<><Navbar /><Cart /></>} />
+          <Route exact path="/" element={<><Navbar user={user} setUser={setUser} /><Home /></>} />
+          <Route exact path="/fortrain" element={<><Navbar user={user} setUser={setUser} /><TrainHome /></>} />
+          <Route exact path="/order" element={<><Navbar user={user} setUser={setUser} /><Dine /></>} />
+          <Route exact path="/cart" element={<><Navbar user={user} setUser={setUser} /><Cart /></>} />
 
         </Routes>
 
