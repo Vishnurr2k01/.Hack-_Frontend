@@ -1,13 +1,36 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './navbar.css'
 import Signup from '../Modals/Signup/Signup';
 import Login from '../Modals/Login/Login';
 import logo from '../../assets/images/logo.png'
-
+import { useCookies } from 'react-cookie';
 
 
 function Navbar({user, setUser, station}) {
+    const [cookies, setCookie,removeCookie] = useCookies(['user']);
 
+    useEffect(()=>{
+        if(cookies.name && cookies.password && cookies.email && cookies._id)
+        {
+            setUser({
+                _id     : cookies._id,
+                name    : cookies.name,
+                password: cookies.password,
+                email   : cookies.email,
+            });
+        }
+    },[cookies.name, cookies.password,cookies.email,cookies._id])
+
+
+    function handleLogout()
+    {
+        console.log("Logging out");
+        setUser(null);
+        removeCookie('name');
+        removeCookie('email');
+        removeCookie('_id');
+        removeCookie('password');
+    }
 
     return <div className='navbar'>
         <div className="nav__left">
@@ -26,7 +49,7 @@ function Navbar({user, setUser, station}) {
                 {
                     user &&
                     (<> <li>Welcome {user.name}</li>
-                        <li>Logout</li>
+                        <li onClick={handleLogout} >Logout</li>
                     </>
                     )
                 }

@@ -5,10 +5,11 @@ import Form from 'react-bootstrap/Form'
 import '../Modals.css';
 import './Signup.css';
 import axios from 'axios';
+import { useCookies } from 'react-cookie';
 
 export default function Signup({user, setUser}) {
+    const [cookies, setCookie] = useCookies(['user']);
     const [show, setShow] = useState(false);
-
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const [localUser, setLocalUser] = useState({
@@ -37,7 +38,12 @@ export default function Signup({user, setUser}) {
                     if(res.status == 200)
                     {
                         console.log("Signup Success");
-                        setUser(res.data)
+                        setUser(res.data);
+                        const { name, email, password ,_id} = res.data;
+                        setCookie('name',name);
+                        setCookie('email',email);
+                        setCookie('password',password);
+                        setCookie('_id',_id);
                     }
                 }
             ).catch(e=>{console.log(e)});
