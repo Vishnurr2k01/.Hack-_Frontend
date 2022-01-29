@@ -5,6 +5,7 @@ import Navbar from './components/navbar/navbar';
 import TrainHome from './components/trainhome/trainhome';
 import Signup from './components/Signup/Signup';
 import Dine from './components/Dine/dine';
+
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 
@@ -28,6 +29,7 @@ function App() {
       </div>
     </BrowserRouter>
   )
+
 }
 
 
