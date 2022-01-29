@@ -60,7 +60,7 @@ export default function Signup() {
                             <Form.Control name="password" value={user.password} onChange={handleChange} className="modalInputBox" type="password" placeholder="Password" />
                         </Form.Group>
 
-                        <Button variant=" mx-auto submitButton" type="submit">
+                        <Button className=" mx-auto mySubmitButton" type="submit">
                             Submit
                         </Button>
                         <span className="mx-auto my-3 text-center alreadyText">Already a user? <a className="alternateLink">Signup</a></span>

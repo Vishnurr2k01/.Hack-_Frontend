@@ -81,7 +81,7 @@ export default function Signup({user, setUser}) {
                             <Form.Control name="confirmPassword" value={localUser.confirmPassword} className="modalInputBox" onChange={changeHandler} type="password" placeholder="Confirm Password" />
                         </Form.Group>
 
-                        <Button variant=" mx-auto submitButton" onClick={signupHandler} onSubmit={signupHandler} type="submit">
+                        <Button className=" mx-auto mySubmitButton" onClick={signupHandler} onSubmit={signupHandler} type="submit">
                             Submit
                         </Button>
                         <span className="mx-auto my-3 text-center alreadyText">Already a localUser? <a className="alternateLink">Login</a></span>

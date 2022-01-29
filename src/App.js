@@ -11,11 +11,9 @@ import TrainRoute from './components/trainroute/trainroute';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { useState } from 'react';
 
-import {useState} from 'react';
-
 function App() {
 
-
+  const [user, setUser] = useState(null);
   const [station, setStation] = useState("")
   const [seat, setSeat] = useState({
     coach: '',
@@ -32,9 +30,6 @@ function App() {
           <Route exact path="/trainroute" element={<><Navbar /><TrainRoute station={station} setStation={setStation} /></>} />
           <Route exact path="/order" element={<><Navbar station={station} user={user} setUser={setUser} /><Dine /></>} />
         </Routes>
-
-
-
       </div>
     </BrowserRouter>
   )
