@@ -81,8 +81,9 @@ button{
     cursor: pointer;
 }
 
-.submitButton{
+.mySubmitButton{
     display: block !important;
+    border: none !important;
     background-color: #FF5252 !important;
     border-radius: 30px !important;
     box-shadow: 0px 10px 30px rgba(183, 50, 39, 0.2);
