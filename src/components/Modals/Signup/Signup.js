@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form'
 import '../Modals.css';
 import './Signup.css';
 import axios from 'axios';
- 
+
 export default function Signup({user, setUser}) {
     const [show, setShow] = useState(false);
 
