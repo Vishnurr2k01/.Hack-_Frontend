@@ -19,7 +19,7 @@
 .dinecard__desc{
     display: flex;
     flex-direction: column;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     padding-left: 1rem;
 }
 .dinecard__desc h2{
@@ -28,7 +28,7 @@ font-weight: bolder;
 .dinecard__desc p{
     color: #8F9698;
     font-weight: bold;
-    margin-top: 1.5rem;
+    margin-top: 0.5rem;
 }
 .dinecard__desc p span{
     color: #31B9CC;

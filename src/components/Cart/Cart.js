@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button';
 import { HiPlusSm, HiMinusSm } from 'react-icons/hi'
 import { useState } from 'react';
 
-export default function Cart() {
+export default function Cart({ seat }) {
 
 
   const [value, setValue] = useState(1);
