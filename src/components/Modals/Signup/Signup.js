@@ -25,10 +25,12 @@ export default function Signup() {
             [name]: value
         })
     }
-    const signupHandler = () => {
+    const signupHandler = (e) => {
+        console.log("Handling Signup");
+        e.preventDefault();
         const { name, email, password, confirmPassword } = user;
         if (name && email && password && (password === confirmPassword)) {
-            axios.post("http://localhost:9002/register", user).then(
+            axios.post("https://yummy-api.herokuapp.com/register", user).then(
                 res => {
                     alert(res.data.message)
                     console.log(res.data);
@@ -74,7 +76,7 @@ export default function Signup() {
                             <Form.Control name="confirmPassword" value={user.confirmPassword} className="modalInputBox" onChange={changeHandler} type="password" placeholder="Confirm Password" />
                         </Form.Group>
 
-                        <Button variant=" mx-auto submitButton" onClick={signupHandler} type="submit">
+                        <Button variant=" mx-auto submitButton" onClick={signupHandler} onSubmit={signupHandler} type="submit">
                             Submit
                         </Button>
                         <span className="mx-auto my-3 text-center alreadyText">Already a user? <a className="alternateLink">Login</a></span>

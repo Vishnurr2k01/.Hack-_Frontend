@@ -80,3 +80,20 @@ button{
     border: none;
     cursor: pointer;
 }
+
+.submitButton{
+    display: block !important;
+    background-color: #FF5252 !important;
+    border-radius: 30px !important;
+    box-shadow: 0px 10px 30px rgba(183, 50, 39, 0.2);
+    text-align: center;
+    letter-spacing: 0.1px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 25px;
+
+    /* Light text */
+    color: #FFFFFF !important;
+}

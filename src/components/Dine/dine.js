@@ -4,6 +4,7 @@ import DineCard from './dinecard';
 import data from '../../assets/Data/data'
 import { AiOutlineSearch } from 'react-icons/ai'
 import Categories from './categories';
+import Button from 'react-bootstrap/Button';
 
 function Dine() {
     const categories = ["Breakfast", "Lunch", "Dinner", "Dessert"]
@@ -13,6 +14,7 @@ function Dine() {
     const [foodData, setFoodData] = useState(data)
     const [foodName, setFoodName] = useState()
 
+    const [chosenOrders, setChosenOrders] = useState([]);
 
     const filterItems = (categories) => {
 
@@ -21,7 +23,10 @@ function Dine() {
 
     }
 
-
+    function placeOrder()
+    {
+        console.log(chosenOrders);
+    }
 
     return <div
         style={
@@ -62,10 +67,12 @@ function Dine() {
         </div>
 
         <h2 className='dine__title'>Lunch Restaraunts Near You</h2>
-
+        <Button variant=" mx-auto submitButton" onClick={placeOrder} >
+            Place Order
+        </Button>
         <div className="dinecard__container">
 
-            <DineCard catName={catName} category={category} foodData={foodData} />
+            <DineCard catName={catName} category={category} foodData={foodData} chosenOrders={chosenOrders} setChosenOrders={setChosenOrders}  placeOrder={placeOrder} />
 
         </div>
 
