@@ -4,20 +4,35 @@ import Signup from '../Modals/Signup/Signup';
 import Login from '../Modals/Login/Login';
 import logo from '../../assets/images/logo.png'
 import { useCookies } from 'react-cookie';
+import axios from 'axios';
 
 
 function Navbar({user, setUser, station}) {
     const [cookies, setCookie,removeCookie] = useCookies(['user']);
 
     useEffect(()=>{
-        if(cookies.name && cookies.password && cookies.email && cookies._id)
+        if(cookies.name && cookies.password && cookies.email && cookies._id && !user)
         {
-            setUser({
-                _id     : cookies._id,
-                name    : cookies.name,
-                password: cookies.password,
-                email   : cookies.email,
-            });
+            axios.post("https://yummy-api.herokuapp.com/login", {name:cookies.name,password:cookies.password}).then(
+                res => {
+                    // alert(res.data)
+                    console.log(res.data);
+                    if(res.status == 200 && res.data.status==='ok')
+                    {
+                        console.log("Cookie Logged in");
+                        setUser(res.data.user);
+                    }
+                    else
+                    {
+                        console.log("Cookie Invalid");
+                        setUser(null);
+                        removeCookie('name');
+                        removeCookie('email');
+                        removeCookie('_id');
+                        removeCookie('password');
+                    }
+                }
+            ).catch(e=>{console.log(e)});
         }
     },[cookies.name, cookies.password,cookies.email,cookies._id])
 
