@@ -30,6 +30,7 @@ function Dine({station, user}) {
     {
         if(user)
         {
+            alert("Order Placed");
             console.log(chosenOrders);
         }
         else

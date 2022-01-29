@@ -17,7 +17,6 @@ function App() {
   const [station, setStation] = useState("")
   const [seat, setSeat] = useState('D12')
   const [coach, setCoach] = useState('55')
-  const [user, setUser] = useState(null);
   return (
     <BrowserRouter>
       <div className="App">
