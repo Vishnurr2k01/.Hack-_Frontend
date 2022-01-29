@@ -70,7 +70,9 @@ function Dine({ station }) {
         </div>
 
         <h2 className='dine__title'>Lunch Restaraunts Near You</h2>
-        <Button id="placeorder" variant=" mx-auto submitButton" onClick={placeOrder} >
+
+        <Button className="mx-auto mySubmitButton" onClick={placeOrder} >
+
             Place Order
         </Button>
         <div className="dinecard__container">

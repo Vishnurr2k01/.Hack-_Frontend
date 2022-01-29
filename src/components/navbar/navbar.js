@@ -5,7 +5,9 @@ import Login from '../Modals/Login/Login';
 import logo from '../../assets/images/logo.png'
 
 
-function Navbar({ user, setUser, station }) {
+
+function Navbar({user, setUser, station}) {
+
 
     return <div className='navbar'>
         <div className="nav__left">
@@ -23,7 +25,10 @@ function Navbar({ user, setUser, station }) {
                 }
                 {
                     user &&
-                    <li>Logout</li>
+                    (<> <li>Welcome {user.name}</li>
+                        <li>Logout</li>
+                    </>
+                    )
                 }
                 <li>Contact</li>
             </ul>
