@@ -1,0 +1,120 @@
+.wrapper{
+    height: 90vh;
+    padding: 0 3rem 0 3rem;
+    background-size: 100vw;
+    background-color: red;
+    background-image: url(../../../public/images/homebg.png);
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
+
+
+.heading{
+    color: #F4F4F7;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-bottom: 2rem;
+}
+
+.cardGroup{
+    display: inline-block;
+    padding-top: 3rem;
+    width: 30vw;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputBox{
+    background-color: #F4F4F7 !important;
+    border: none !important;
+    width: 90% !important;
+    height: 50px; 
+    border-radius: 30px !important;
+    margin-bottom:2rem;
+    /* padding-left: 2rem !important; */
+}
+
+.productCard{
+    height: fit-content;
+    /* min-height: 70px; */
+    background-color: #F4F4F7;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 7px;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-bottom: 7px;
+}
+
+.thumbnail{
+    width: 70px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+
+.detailsBlock{
+    /* display: block; */
+    display: inline-block;
+    width: 70%;
+}
+
+.productName{
+    display: block;
+    font-weight: 700;
+}
+
+.ProductInfoWrapper{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin: 10px;
+}
+
+.productPrice{
+    width: 100px;
+}
+
+.productQuantity{
+    display: inline-block;
+}
+
+
+
+/* rightBar */
+
+.rightBar{
+    padding-top: 100px;
+    display: inline-block;
+    width: 40vw;
+}
+
+.form-check{
+    background-color: #F4F4F7 !important;
+    height: 50px;
+    border-radius: 30px;
+    padding-top: 15px !important;
+    padding-left: 50px !important;
+    margin-top: 15px !important;
+    margin-top: 15px !important;
+}
+
+.submitButton{
+    margin-top: 200px;
+    display: block !important;
+    background-color: #FF5252 !important;
+    border-radius: 30px !important;
+    box-shadow: 0px 10px 30px rgba(183, 50, 39, 0.2);
+    text-align: center;
+    letter-spacing: 0.1px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 25px;
+
+    /* Light text */
+    color: #FFFFFF !important;
+}

@@ -5,7 +5,7 @@ import Navbar from './components/navbar/navbar';
 import TrainHome from './components/trainhome/trainhome';
 import Signup from './components/Signup/Signup';
 import Dine from './components/Dine/dine';
-
+import Cart from './components/Cart/Cart';
 
 function App() {
   return (
@@ -14,7 +14,8 @@ function App() {
       {/* <Signup/> */}
       {/* <Home /> */}
       {/* <TrainHome /> */}
-      <Dine />
+      {/* <Dine /> */}
+      <Cart/>
     </div>
   );
 }
