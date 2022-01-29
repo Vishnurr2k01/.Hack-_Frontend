@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.home{
+    
+}
+.home__content{
+    text-align: center;
+    padding-top: 5%;
+
+}
+.home__text1,.home__text2{
+    font-size: 2rem;
+    color: #fff;
+}
+.home__button{
+    display: flex;
+    justify-content: center;
+    margin: 6rem 0;
+}
+.home__button1{
+ color: #fff;
+ font-size: 1.2rem;
+ /* width: 10rem; */
+ margin: 0 1rem;
+ padding: 0.7rem 3.5rem ;
+ align-self: center;
+ border: 1px solid #fff;
+ border-radius: 20px;
+ transition: 0.3s;
+}
+.home__button1:hover{
+    background: #FF5252;
+    border: 1px solid #FF5252;
+}
