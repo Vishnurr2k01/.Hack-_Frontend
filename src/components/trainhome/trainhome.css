@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.trainhome{
+    display: flex;
+    justify-content: center;
+   
+    justify-content: center;
+    
+}
+.trainhome__search{
+    display: flex;
+   justify-content: space-between;
+    margin:10rem auto;
+    background: #fff;
+    height: 2rem;
+    
+    
+    width: 15rem;
+    padding: 0.5rem 1rem 0rem 0.8rem;
+    border-radius: 20px;
+
+    
+}
+.trainhome__search p{
+padding-top: 0.1rem;
+font-size: 1.2rem;
+}
+.input{
+    outline: none;
+    border: none;
+    font-size: 1rem;
+}
+button{
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
