@@ -52,8 +52,8 @@ function TrainHome({ seat,coach ,setSeat, setCoach }) {
             </div>
             <h4>Jan Shatabdi</h4>
             <form action="">
-                <input type="text" name="coach" value={seat.coach} required onChange={(e) => setCoach(e.target.value)} placeholder='Coach' /> <br />
-                <input type="text" name='seatNumber' required value={seat.seatNumber} onChange={(e) => setSeat(e.target.value)} placeholder='Seat No' /><br />
+                <input type="text" name="coach" value={coach} required onChange={(e) => setCoach(e.target.value)} placeholder='Coach' /> <br />
+                <input type="text" name='seatNumber' required value={seat} onChange={(e) => setSeat(e.target.value)} placeholder='Seat No' /><br />
                 <button id="trainseat__button" type='submit' onClick={submitHandler}> Submit </button>
             </form>
         </div>

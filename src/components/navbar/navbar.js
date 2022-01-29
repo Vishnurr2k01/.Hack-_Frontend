@@ -1,13 +1,51 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './navbar.css'
 import Signup from '../Modals/Signup/Signup';
 import Login from '../Modals/Login/Login';
 import logo from '../../assets/images/logo.png'
-
+import { useCookies } from 'react-cookie';
+import axios from 'axios';
 
 
 function Navbar({user, setUser, station}) {
+    const [cookies, setCookie,removeCookie] = useCookies(['user']);
 
+    useEffect(()=>{
+        if(cookies.name && cookies.password && cookies.email && cookies._id && !user)
+        {
+            axios.post("https://yummy-api.herokuapp.com/login", {name:cookies.name,password:cookies.password}).then(
+                res => {
+                    // alert(res.data)
+                    console.log(res.data);
+                    if(res.status == 200 && res.data.status==='ok')
+                    {
+                        console.log("Cookie Logged in");
+                        setUser(res.data.user);
+                    }
+                    else
+                    {
+                        console.log("Cookie Invalid");
+                        setUser(null);
+                        removeCookie('name');
+                        removeCookie('email');
+                        removeCookie('_id');
+                        removeCookie('password');
+                    }
+                }
+            ).catch(e=>{console.log(e)});
+        }
+    },[cookies.name, cookies.password,cookies.email,cookies._id])
+
+
+    function handleLogout()
+    {
+        console.log("Logging out");
+        setUser(null);
+        removeCookie('name');
+        removeCookie('email');
+        removeCookie('_id');
+        removeCookie('password');
+    }
 
     return <div className='navbar'>
         <div className="nav__left">
@@ -26,7 +64,7 @@ function Navbar({user, setUser, station}) {
                 {
                     user &&
                     (<> <li>Welcome {user.name}</li>
-                        <li>Logout</li>
+                        <li onClick={handleLogout} >Logout</li>
                     </>
                     )
                 }
