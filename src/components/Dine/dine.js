@@ -6,7 +6,7 @@ import { AiOutlineSearch } from 'react-icons/ai'
 import Categories from './categories';
 import Button from 'react-bootstrap/Button';
 
-function Dine({station}) {
+function Dine({station, user}) {
     const categories = ["Breakfast", "Lunch", "Dinner", "Dessert"]
     const [catName, setCatName] = useState("Breakfast")
 
@@ -25,7 +25,14 @@ function Dine({station}) {
 
     function placeOrder()
     {
-        console.log(chosenOrders);
+        if(user)
+        {
+            console.log(chosenOrders);
+        }
+        else
+        {
+            alert("Please Signup to Continue");
+        }
     }
 
     return <div
