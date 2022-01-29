@@ -4,7 +4,9 @@ import Signup from '../Modals/Signup/Signup';
 import Login from '../Modals/Login/Login';
 import logo from '../../assets/images/logo.png'
 
-function Navbar({ station }) {
+
+function Navbar({user, setUser}) {
+
     return <div className='navbar'>
         <div className="nav__left">
             <img src={logo} alt="" />
@@ -13,8 +15,16 @@ function Navbar({ station }) {
         <div className="nav__right">
             <ul>
                 <li>Home</li>
-                <li><Login /></li>
-                <li><Signup /></li>
+                {!user &&
+                    (<>
+                        <li><Login user={user} setUser={setUser} /></li>
+                        <li><Signup user={user} setUser={setUser} /></li>
+                    </>)
+                }
+                {
+                    user &&
+                    <li>Logout</li>
+                }
                 <li>Contact</li>
             </ul>
         </div>

@@ -11,14 +11,17 @@ import TrainRoute from './components/trainroute/trainroute';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { useState } from 'react';
 
+import {useState} from 'react';
 
 function App() {
+
 
   const [station, setStation] = useState("")
   const [seat, setSeat] = useState({
     coach: '',
     seatNumber: ''
   })
+
   return (
     <BrowserRouter>
       <div className="App">
