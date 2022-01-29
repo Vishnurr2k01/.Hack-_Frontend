@@ -28,12 +28,7 @@ function Dine({ station }) {
 
     function placeOrder() {
         console.log(chosenOrders);
-        axios.post("https://yummy-api.herokuapp.com/cart", chosenOrders).then(
-            res => {
-                console.log('added');
-                navigate('/cart')
-            }
-        )
+      
     }
 
     return <div
