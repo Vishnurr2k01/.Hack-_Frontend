@@ -5,19 +5,32 @@ import Navbar from './components/navbar/navbar';
 import TrainHome from './components/trainhome/trainhome';
 import Signup from './components/Signup/Signup';
 import Dine from './components/Dine/dine';
-import Cart from './components/Cart/Cart';
+
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      {/* <Signup/> */}
-      {/* <Home /> */}
-      {/* <TrainHome /> */}
-      {/* <Dine /> */}
-      <Cart/>
-    </div>
-  );
+    <BrowserRouter>
+      <div className="App">
+        <Routes>
+          <Route exact path="/" element={<><Navbar /><Home /></>} />
+          <Route exact path="/fortrain" element={<><Navbar /><TrainHome /></>} />
+          <Route exact path="/order" element={<><Navbar /><Dine /></>} />
+
+        </Routes>
+
+        {/* <Navbar /> */}
+        {/* <Signup/> */}
+        {/* <Home /> */}
+        {/* <TrainHome /> */}
+        {/* <Dine /> */}
+
+      </div>
+    </BrowserRouter>
+  )
+
 }
+
 
 export default App;
