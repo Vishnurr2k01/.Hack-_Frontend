@@ -67,6 +67,16 @@ export default function Cart({ seat }) {
           })}
         </div>
         <div className="reservation">
+
+
+        {seat? (
+          <div>
+          <h3>
+            Coach Number : `${seat.coach}` <br />
+            Seat Number : `${}`
+          </h3>
+          </div>
+        )}
           <div> <h3>Total Seats Reserved : <span> <HiMinusSm onClick={() => setValue(value - 1)} />{value}
             <HiPlusSm onClick={() => setValue(value + 1)} /> </span>  </h3> </div>
           <input type="text" placeholder='Enter Date and Time' />
