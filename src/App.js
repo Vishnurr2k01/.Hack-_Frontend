@@ -5,6 +5,7 @@ import Navbar from './components/navbar/navbar';
 import TrainHome from './components/trainhome/trainhome';
 import Signup from './components/Signup/Signup';
 import Dine from './components/Dine/dine';
+import Cart from './components/Cart/Cart'
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
@@ -18,17 +19,14 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Routes>
-          <Route exact path="/" element={<><Navbar user={user} setUser={setUser} /><Home /></>} />
-          <Route exact path="/fortrain" element={<><Navbar user={user} setUser={setUser} /><TrainHome /></>} />
-          <Route exact path="/order" element={<><Navbar user={user} setUser={setUser} /><Dine /></>} />
+          <Route exact path="/" element={<><Navbar /><Home /></>} />
+          <Route exact path="/fortrain" element={<><Navbar /><TrainHome /></>} />
+          <Route exact path="/order" element={<><Navbar /><Dine /></>} />
+          <Route exact path="/cart" element={<><Navbar /><Cart /></>} />
 
         </Routes>
 
-        {/* <Navbar /> */}
-        {/* <Signup/> */}
-        {/* <Home /> */}
-        {/* <TrainHome /> */}
-        {/* <Dine /> */}
+
 
       </div>
     </BrowserRouter>
