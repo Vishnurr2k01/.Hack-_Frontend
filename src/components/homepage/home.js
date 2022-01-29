@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './home.css'
+import { useNavigate } from 'react-router-dom';
 function Home() {
+    const navigate = useNavigate()
     return <div className='home' style={
         {
             backgroundImage: "url(/images/homebg.png)",
@@ -15,10 +17,10 @@ function Home() {
                     you have yuMmy</h2>
             </div>
             <div className="home__button">
-                <div className="home__button1">
+                <div className="home__button1" onClick={() => { navigate('/fortrain') }}>
                     For Train
                 </div>
-                <div className="home__button1">
+                <div className="home__button1" onClick={() => { navigate('/order') }}>
                     For Dine
                 </div>
 
