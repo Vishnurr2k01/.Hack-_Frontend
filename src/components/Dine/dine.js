@@ -1,9 +1,25 @@
 import React, { useState } from 'react';
 import './dine.css'
 import DineCard from './dinecard';
+import data from '../../assets/Data/data'
 import { AiOutlineSearch } from 'react-icons/ai'
+import Categories from './categories';
 
 function Dine() {
+    const categories = ["Breakfast", "Lunch", "Dinner", "Dessert"]
+    const [catName, setCatName] = useState("Breakfast")
+
+    const [category, setCategory] = useState(categories);
+    const [foodData, setFoodData] = useState(data)
+    const [foodName, setFoodName] = useState()
+
+
+    const filterItems = (categories) => {
+
+        const newItems = data.filter((item) => item.category === categories)
+        setFoodData(newItems)
+
+    }
 
 
 
@@ -19,19 +35,8 @@ function Dine() {
 
         <div className="dine__header">
             <div className="dine__header__left">
+                <Categories catName={catName} setCatName={setCatName} category={category} filterItems={filterItems} />
 
-                <div className="filter">
-                    Dinner
-                </div>
-                <div className="filter__active">
-                    Lunch
-                </div>
-                <div className="filter">
-                    Breakfast
-                </div>
-                <div className="filter">
-                    Dessert
-                </div>
             </div>
             <div className="dine__header__right">
                 <h2>
@@ -44,10 +49,10 @@ function Dine() {
 
                     <div className="left">
 
-                        <input type="text" placeholder='Enter a meal' className='input' />
+                        <input type="text" name="food" value={foodName} onChange={(e) => setFoodName(e.target.value)} placeholder='Enter a meal' className='input' />
                     </div>
                     <div className="right">
-                        <button type='submit'>
+                        <button type='submit' >
                             <p><AiOutlineSearch /></p>
                         </button>
                     </div>
@@ -60,13 +65,8 @@ function Dine() {
 
         <div className="dinecard__container">
 
-            <DineCard />
-            <DineCard />
-            <DineCard />
-            <DineCard />
-            <DineCard />
-            <DineCard />
-            <DineCard />
+            <DineCard catName={catName} category={category} foodData={foodData} />
+
         </div>
 
     </div>;

@@ -1,20 +1,43 @@
 import React from 'react';
 import './dinecard.css'
 import img from '../../assets/images/img.png'
+import data from '../../assets/Data/data'
 
-function DineCard() {
-    return <div className='dinecard'>
+function DineCard({ category, foodData, catName }) {
 
-        <div className="dinecard__image">
-            <img src={img} className='image' alt="" />
-        </div>
-        <div className="dinecard__desc">
-            <h3>Thaal Kitchen</h3>
-            <p>Lunch | Kerala | Rs.100</p>
-            <p><span>97%</span></p>
-        </div>
+    const items = foodData.filter((food) => food.category === catName)
 
-    </div>;
+    return (
+
+        <>
+            {items.map((datas) => {
+                return (
+                    <div className='dinecard'>
+
+                        <div className="dinecard__image">
+                            <img src={datas.image} className='image' alt="" />
+                        </div>
+                        <div className="dinecard__desc">
+                            <h4> {datas.title} </h4>
+                            <h6> <em> {datas.hotel} </em></h6>
+                            <p>{catName} | {datas.Location} | Rs.{datas.price}</p>
+                            <div className="card__bottom">
+
+                                <p><span>{datas.rating}%</span></p>
+                                <p id='add'>Add to cart</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                )
+            })}
+
+
+
+
+        </>
+    )
 }
 
 export default DineCard;

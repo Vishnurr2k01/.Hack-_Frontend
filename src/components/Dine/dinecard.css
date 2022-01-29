@@ -33,6 +33,20 @@ font-weight: bolder;
 .dinecard__desc p span{
     color: #31B9CC;
 }
-.dinecard:hover{
+/* .dinecard:hover{
     transform: scale(1.01);
+} */
+.card__bottom{
+    padding-right: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+#add{
+    color: #FF5252;
+    cursor: pointer;
+}
+#added{
+    color:#8F9698;
+    font-style: italic;
+    cursor: not-allowed;
 }
