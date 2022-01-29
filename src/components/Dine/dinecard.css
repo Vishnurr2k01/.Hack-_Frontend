@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+.dinecard{
+    margin-left: 1.3rem;
+    background: #fff;
+    width: 15rem;
+    border-radius: 10px;
+    transition: 0.2s;
+    padding-bottom: 1rem;
+}
+.dinecard img{
+    width: 14rem;
+    height: 10rem;
+    padding: 0.5rem 0.5rem;
+}
+.dinecard__desc{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    padding-left: 1rem;
+}
+.dinecard__desc h2{
+font-weight: bolder;
+}
+.dinecard__desc p{
+    color: #8F9698;
+    font-weight: bold;
+    margin-top: 1.5rem;
+}
+.dinecard__desc p span{
+    color: #31B9CC;
+}
+.dinecard:hover{
+    transform: scale(1.01);
+}
