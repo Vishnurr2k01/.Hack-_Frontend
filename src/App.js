@@ -14,9 +14,9 @@ import { useState } from 'react';
 function App() {
 
   const [user, setUser] = useState(null);
-  const [station, setStation] = useState("")
-  const [seat, setSeat] = useState('D12')
-  const [coach, setCoach] = useState('55')
+  const [station, setStation] = useState("");
+  const [seat, setSeat] = useState('');
+  const [coach, setCoach] = useState('');
   const [chosenOrders, setChosenOrders] = useState([]);
 
   return (
