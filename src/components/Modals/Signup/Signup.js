@@ -6,12 +6,12 @@ import '../Modals.css';
 import './Signup.css';
 import axios from 'axios';
 
-export default function Signup() {
+export default function Signup({user, setUser}) {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const [user, setUser] = useState({
+    const [localUser, setLocalUser] = useState({
         name: '',
         email: '',
         password: '',
@@ -20,20 +20,27 @@ export default function Signup() {
 
     const changeHandler = (e) => {
         const { name, value } = e.target
-        setUser({
-            ...user,
+        setLocalUser({
+            ...localUser,
             [name]: value
         })
     }
-    const signupHandler = () => {
-        const { name, email, password, confirmPassword } = user;
+    const signupHandler = (e) => {
+        e.preventDefault();
+        console.log("Handling Signup");
+        const { name, email, password, confirmPassword } = localUser;
         if (name && email && password && (password === confirmPassword)) {
-            axios.post("http://localhost:9002/register", user).then(
+            axios.post("https://yummy-api.herokuapp.com/register", localUser).then(
                 res => {
-                    alert(res.data.message)
+                    // alert(res.data)
                     console.log(res.data);
+                    if(res.status == 200)
+                    {
+                        console.log("Signup Success");
+                        setUser(res.data)
+                    }
                 }
-            )
+            ).catch(e=>{console.log(e)});
         } else {
             if (password !== confirmPassword) {
                 alert("both passwords must be same")
@@ -62,22 +69,22 @@ export default function Signup() {
                     <span className="modalHeading mb-5">Sign Up</span>
                     <Form>
                         <Form.Group className="mb-3" controlId="exampleForm.email">
-                            <Form.Control name="email" value={user.email} onChange={changeHandler} className="modalInputBox" type="email" placeholder="Email" />
+                            <Form.Control name="email" value={localUser.email} onChange={changeHandler} className="modalInputBox" type="email" placeholder="Email" />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="exampleForm.username">
-                            <Form.Control name="name" value={user.name} onChange={changeHandler} className="modalInputBox" type="text" placeholder="Username" />
+                            <Form.Control name="name" value={localUser.name} onChange={changeHandler} className="modalInputBox" type="text" placeholder="Username" />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="exampleForm.password">
-                            <Form.Control name="password" value={user.password} className="modalInputBox" onChange={changeHandler} type="password" placeholder="Password" />
+                            <Form.Control name="password" value={localUser.password} className="modalInputBox" onChange={changeHandler} type="password" placeholder="Password" />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="exampleForm.confirmPassword">
-                            <Form.Control name="confirmPassword" value={user.confirmPassword} className="modalInputBox" onChange={changeHandler} type="password" placeholder="Confirm Password" />
+                            <Form.Control name="confirmPassword" value={localUser.confirmPassword} className="modalInputBox" onChange={changeHandler} type="password" placeholder="Confirm Password" />
                         </Form.Group>
 
-                        <Button variant=" mx-auto submitButton" onClick={signupHandler} type="submit">
+                        <Button variant=" mx-auto submitButton" onClick={signupHandler} onSubmit={signupHandler} type="submit">
                             Submit
                         </Button>
-                        <span className="mx-auto my-3 text-center alreadyText">Already a user? <a className="alternateLink">Login</a></span>
+                        <span className="mx-auto my-3 text-center alreadyText">Already a localUser? <a className="alternateLink">Login</a></span>
                     </Form>
                 </Modal.Body>
             </Modal>
