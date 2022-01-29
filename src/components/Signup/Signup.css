@@ -1,0 +1,50 @@
+.modal-content{
+    background-color: transparent !important;
+    border: none !important;
+}
+.signupModal{
+    background-color: #ccccd7c2 ;
+    border-radius: 30px;
+}
+
+.signUpHeading{
+    width: 100%;
+    text-align: center;
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+}
+.signupInputBox{
+    background-color: #CCCCD7 !important;
+    /* width: 354px; */
+    height: 54px; 
+    border-radius: 30px !important;
+    padding-left: 2rem !important;
+}
+
+.submitButton{
+    display: block !important;
+    background-color: #FF5252 !important;
+    border-radius: 30px !important;
+    box-shadow: 0px 10px 30px rgba(183, 50, 39, 0.2);
+    text-align: center;
+    letter-spacing: 0.1px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 36px;
+
+    /* Light text */
+    color: #FFFFFF !important;
+}
+
+.alreadyText{
+    display: block !important;
+}
+
+.loginLink{
+    color: #FF5252;
+}
+

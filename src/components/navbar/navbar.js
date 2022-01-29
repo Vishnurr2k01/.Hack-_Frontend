@@ -1,5 +1,7 @@
 import React from 'react';
 import './navbar.css'
+import Signup from '../Signup/Signup';
+
 function Navbar() {
     return <div className='navbar'>
         <div className="nav__left">
@@ -9,7 +11,7 @@ function Navbar() {
             <ul>
                 <li>Home</li>
                 <li>Login</li>
-                <li>SignUp</li>
+                <li><Signup/></li>
                 <li>Contact</li>
             </ul>
         </div>
