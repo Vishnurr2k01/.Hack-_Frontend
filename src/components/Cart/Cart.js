@@ -3,27 +3,33 @@ import './Cart.css';
 // import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import { HiPlusSm, HiMinusSm } from 'react-icons/hi'
+import { useState } from 'react';
 
 export default function Cart() {
 
-    const cartList = [
-        {
-            name: "Veggie Tomato Mix",
-            thumbnail:"/images/foodImages/food1",
-            price: 300,
-            quantity:1
-        },
-        {
-            name: "Tandoori Chicken",
-            thumbnail:"/images/foodImages/food2",
-            price: 400,
-            quantity:1
-        }
-    ];
+
+  const [value, setValue] = useState(1);
+  const cartList = [
+    {
+      name: "Veggie Tomato Mix",
+      thumbnail: "/images/foodImages/food1",
+      price: 300,
+      quantity: 1
+    },
+    {
+      name: "Tandoori Chicken",
+      thumbnail: "/images/foodImages/food2",
+      price: 400,
+      quantity: 1
+    }
+  ];
 
 
-    return (
+  return (
+    <div className="main">
       <div className="wrapper">
+
         <div className="cardGroup">
           <h3 className="heading">Add to your Cart</h3>
           <Form.Group
@@ -60,6 +66,12 @@ export default function Cart() {
             );
           })}
         </div>
+        <div className="reservation">
+          <div> <h3>Total Seats Reserved : <span> <HiMinusSm onClick={() => setValue(value - 1)} />{value}
+            <HiPlusSm onClick={() => setValue(value + 1)} /> </span>  </h3> </div>
+          <input type="text" placeholder='Enter Date and Time' />
+          <input type="button" id="btn" value="Submit" />
+        </div>
         <div className="rightBar">
           <div key='default-radio' className="m-3">
             <Form.Check
@@ -67,7 +79,7 @@ export default function Cart() {
               type='radio'
               id='card'
               label='Card'
-              />
+            />
             <Form.Check
               name='payment'
               type='radio'
@@ -79,8 +91,15 @@ export default function Cart() {
           <Button variant=" mx-auto submitButton" type="submit">
             Proceed to Payment
           </Button>
-          
+
         </div>
+
+
+
       </div>
-    );
+
+
+    </div>
+
+  );
 }
