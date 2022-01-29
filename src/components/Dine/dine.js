@@ -8,7 +8,8 @@ import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-function Dine({ station }) {
+function Dine({station, user, chosenOrders, setChosenOrders}) {
+
     const categories = ["Breakfast", "Lunch", "Dinner", "Dessert"]
     const [catName, setCatName] = useState("Breakfast")
 
@@ -17,7 +18,6 @@ function Dine({ station }) {
     const [foodName, setFoodName] = useState()
     const navigate = useNavigate()
 
-    const [chosenOrders, setChosenOrders] = useState([]);
 
     const filterItems = (categories) => {
 
@@ -26,9 +26,18 @@ function Dine({ station }) {
 
     }
 
-    function placeOrder() {
-        console.log(chosenOrders);
-      
+    function placeOrder()
+    {
+        if(user)
+        {
+            console.log("Order Forwarded");
+            console.log(chosenOrders);
+            navigate('/cart')
+        }
+        else
+        {
+            alert("Please Signup to Continue");
+        }
     }
 
     return <div

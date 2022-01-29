@@ -5,26 +5,34 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { HiPlusSm, HiMinusSm } from 'react-icons/hi'
 import { useState } from 'react';
+import data from '../../assets/Data/data';
 
-export default function Cart({ seat, coach }) {
+export default function Cart({ seat, coach, chosenOrders, setChosenOrders }) {
 
-
+  console.log(chosenOrders);
   const [value, setValue] = useState(1);
-  const cartList = [
-    {
-      name: "Veggie Tomato Mix",
-      thumbnail: "/images/foodImages/food1",
-      price: 300,
-      quantity: 1
-    },
-    {
-      name: "Tandoori Chicken",
-      thumbnail: "/images/foodImages/food2",
-      price: 400,
-      quantity: 1
-    }
-  ];
+  // const cartList = [
+  //   {
+  //     name: "Veggie Tomato Mix",
+  //     thumbnail: "/images/foodImages/food1",
+  //     price: 300,
+  //     quantity: 1
+  //   },
+  //   {
+  //     name: "Tandoori Chicken",
+  //     thumbnail: "/images/foodImages/food2",
+  //     price: 400,
+  //     quantity: 1
+  //   }
+  // ];
+  const [cartList, setCartList] = useState([]);
 
+  const dataToDisplay = data.filter((item)=>{
+    if(chosenOrders.includes(item.id))
+      return item;
+  });
+
+  console.log(dataToDisplay);
 
   return (
     <div className="main">
@@ -42,23 +50,23 @@ export default function Cart({ seat, coach }) {
               placeholder="Search yuMmy"
             />
           </Form.Group>
-          {cartList.map((product) => {
+          {dataToDisplay.map((product) => {
             return (
               <div className="productCard">
                 <img
                   className="thumbnail"
-                  src="https://picsum.photos/200"
+                  src={product.image}
                 ></img>
                 <div className="detailsBlock">
                   <span className="productName ml-auto text-center">
-                    {product.name}
+                    {product.title}
                   </span>
                   <div className="ProductInfoWrapper">
                     <span className="productPrice mr-auto">
                       INR {product.price}
                     </span>
                     <span className="productQuantity ml-auto">
-                      {product.quantity}
+                      {1}
                     </span>
                   </div>
                 </div>
