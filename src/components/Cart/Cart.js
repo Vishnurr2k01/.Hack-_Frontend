@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 import { HiPlusSm, HiMinusSm } from 'react-icons/hi'
 import { useState } from 'react';
 import data from '../../assets/Data/data';
+import OrderSuccess from '../Modals/OrderSuccess/OrderSuccess';
 
 export default function Cart({ seat, coach, chosenOrders, setChosenOrders }) {
 
@@ -26,6 +27,7 @@ export default function Cart({ seat, coach, chosenOrders, setChosenOrders }) {
   //   }
   // ];
   const [cartList, setCartList] = useState([]);
+  const [show, setShow] = useState(false);
 
   const dataToDisplay = data.filter((item)=>{
     if(chosenOrders.includes(item.id))
@@ -110,7 +112,7 @@ export default function Cart({ seat, coach, chosenOrders, setChosenOrders }) {
             />
           </div>
 
-          <Button variant=" mx-auto submitButton" type="submit">
+          <Button variant=" mx-auto submitButton" type="submit" onClick={()=>{setShow(true)}}>
             Proceed to Payment
           </Button>
 
@@ -120,7 +122,7 @@ export default function Cart({ seat, coach, chosenOrders, setChosenOrders }) {
 
       </div>
 
-
+            <OrderSuccess show={show} setShow={setShow} />
     </div>
 
   );
