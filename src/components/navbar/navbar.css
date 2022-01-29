@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.navbar{
+    display: flex;
+    height: 10vh;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+.nav__left p{
+    color: #A59C9C;
+    font-weight: 500;
+}
+.nav__right ul{
+    display: flex;
+}
+.nav__right ul li{
+    list-style: none;
+    margin-left: 4rem;
+
+}

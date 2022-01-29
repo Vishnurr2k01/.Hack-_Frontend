@@ -4,7 +4,7 @@ function Home() {
     return <div className='home' style={
         {
             backgroundImage: "url(/images/homebg.png)",
-            height: '100vh',
+            height: '90vh',
             backgroundRepeat: 'no-repeat',
             backgroundSize: '100vw'
         }
