@@ -2,7 +2,8 @@ import react, {useState} from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form'
-import './Signup.css';
+import '../Modals.css';
+import './Login.css';
 
 export default function Signup() {
     const [show, setShow] = useState(false);
@@ -13,7 +14,7 @@ export default function Signup() {
     return (
       <>
         <span onClick={handleShow}>
-          Signup
+          Login
         </span>
   
         <Modal 
@@ -24,25 +25,19 @@ export default function Signup() {
             <Modal.Body
                 className='modalBody p-5'
             >
-                <span className="modalHeading mb-5">Sign Up</span>
+                <span className="modalHeading mb-5">Login</span>
                 <Form>
                 <Form.Group className="mb-3" controlId="exampleForm.email">
-                    <Form.Control className="modalInputBox" type="email" placeholder="Email" />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="exampleForm.username">
-                    <Form.Control  className="modalInputBox" type="text" placeholder="Username" />
+                    <Form.Control className="modalInputBox" type="text" placeholder="Email or Username" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="exampleForm.password">
                     <Form.Control  className="modalInputBox" type="password" placeholder="Password" />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="exampleForm.confirmPassword">
-                    <Form.Control  className="modalInputBox" type="password" placeholder="Confirm Password" />
                 </Form.Group>
 
                 <Button variant=" mx-auto submitButton" type="submit">
                     Submit
                 </Button>
-                <span className="mx-auto my-3 text-center alreadyText">Already a user? <a className="alternateLink">Login</a></span>
+                <span className="mx-auto my-3 text-center alreadyText">Already a user? <a className="alternateLink">Signup</a></span>
                 </Form>
             </Modal.Body>
         </Modal>
