@@ -2,6 +2,7 @@ import react, {useState} from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form'
+import '../Modals.css';
 import './Signup.css';
 
 export default function Signup() {
