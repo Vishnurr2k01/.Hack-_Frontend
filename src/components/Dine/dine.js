@@ -5,14 +5,17 @@ import data from '../../assets/Data/data'
 import { AiOutlineSearch } from 'react-icons/ai'
 import Categories from './categories';
 import Button from 'react-bootstrap/Button';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
-function Dine({station}) {
+function Dine({ station }) {
     const categories = ["Breakfast", "Lunch", "Dinner", "Dessert"]
     const [catName, setCatName] = useState("Breakfast")
 
     const [category, setCategory] = useState(categories);
     const [foodData, setFoodData] = useState(data)
     const [foodName, setFoodName] = useState()
+    const navigate = useNavigate()
 
     const [chosenOrders, setChosenOrders] = useState([]);
 
@@ -23,9 +26,9 @@ function Dine({station}) {
 
     }
 
-    function placeOrder()
-    {
+    function placeOrder() {
         console.log(chosenOrders);
+      
     }
 
     return <div
@@ -67,12 +70,14 @@ function Dine({station}) {
         </div>
 
         <h2 className='dine__title'>Lunch Restaraunts Near You</h2>
+
         <Button className="mx-auto mySubmitButton" onClick={placeOrder} >
+
             Place Order
         </Button>
         <div className="dinecard__container">
 
-            <DineCard catName={catName} category={category} foodData={foodData} chosenOrders={chosenOrders} setChosenOrders={setChosenOrders}  placeOrder={placeOrder} />
+            <DineCard catName={catName} category={category} foodData={foodData} chosenOrders={chosenOrders} setChosenOrders={setChosenOrders} placeOrder={placeOrder} />
 
         </div>
 

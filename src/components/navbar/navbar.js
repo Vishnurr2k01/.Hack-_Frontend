@@ -5,7 +5,9 @@ import Login from '../Modals/Login/Login';
 import logo from '../../assets/images/logo.png'
 
 
+
 function Navbar({user, setUser, station}) {
+
 
     return <div className='navbar'>
         <div className="nav__left">

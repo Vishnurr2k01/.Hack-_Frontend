@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button';
 import { HiPlusSm, HiMinusSm } from 'react-icons/hi'
 import { useState } from 'react';
 
-export default function Cart({ seat }) {
+export default function Cart({ seat, coach }) {
 
 
   const [value, setValue] = useState(1);
@@ -67,10 +67,24 @@ export default function Cart({ seat }) {
           })}
         </div>
         <div className="reservation">
-          <div> <h3>Total Seats Reserved : <span> <HiMinusSm onClick={() => setValue(value - 1)} />{value}
-            <HiPlusSm onClick={() => setValue(value + 1)} /> </span>  </h3> </div>
-          <input type="text" placeholder='Enter Date and Time' />
-          <input type="button" id="btn" value="Submit" />
+
+
+          {seat && coach ? (
+            <div>
+              <h3>
+                Coach Number : {coach} <br />
+                Seat Number : {seat}
+              </h3>
+            </div>
+          ) : (
+            <>
+              <div> <h3>Total Seats Reserved : <span> <HiMinusSm onClick={() => setValue(value - 1)} />{value}
+                <HiPlusSm onClick={() => setValue(value + 1)} /> </span>  </h3> </div>
+              <input type="text" placeholder='Enter Date and Time' />
+              <input type="button" id="btn" value="Submit" />
+            </>
+          )}
+
         </div>
         <div className="rightBar">
           <div key='default-radio' className="m-3">
