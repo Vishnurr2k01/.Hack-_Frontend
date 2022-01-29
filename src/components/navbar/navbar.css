@@ -9,7 +9,16 @@
     align-items: center;
     padding: 0 2rem;
 }
+.nav__left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav__left img{
+    height: 4rem;
+}
 .nav__left p{
+    margin-left: 2rem;
     color: #A59C9C;
     font-weight: 500;
 }
