@@ -26,12 +26,11 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Routes>
-          <Route exact path="/" element={<><Navbar /><Home /></>} />
-          <Route exact path="/order" element={<><Navbar station={station} /><Dine /></>} />
-          <Route exact path="/cart" element={<><Navbar /><Cart seat={seat} /></>} />
+          <Route exact path="/" element={<><Navbar user={user} setUser={setUser} /><Home /></>} />
+          <Route exact path="/fortrain" element={<><Navbar user={user} setUser={setUser} /><TrainHome seat={seat} setSeat={setSeat} /></>} />
+          <Route exact path="/cart" element={<><Navbar user={user} setUser={setUser}/><Cart seat={seat} /></>} />
           <Route exact path="/trainroute" element={<><Navbar /><TrainRoute station={station} setStation={setStation} /></>} />
-          <Route exact path="/fortrain" element={<><Navbar /><TrainHome seat={seat} setSeat={setSeat} /></>} />
-
+          <Route exact path="/order" element={<><Navbar station={station} user={user} setUser={setUser} /><Dine /></>} />
         </Routes>
 
 

@@ -23,7 +23,10 @@ function Navbar({user, setUser}) {
                 }
                 {
                     user &&
-                    <li>Logout</li>
+                    (<> <li>Welcome {user.name}</li>
+                        <li>Logout</li>
+                    </>
+                    )
                 }
                 <li>Contact</li>
             </ul>
