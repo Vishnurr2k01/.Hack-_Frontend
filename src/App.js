@@ -9,8 +9,12 @@ import Cart from './components/Cart/Cart'
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
+import {useState} from 'react';
 
 function App() {
+
+  const [user, setUser] = useState(null);
+
   return (
     <BrowserRouter>
       <div className="App">
