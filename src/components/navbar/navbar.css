@@ -28,5 +28,13 @@
 .nav__right ul li{
     list-style: none;
     margin-left: 4rem;
+    cursor: default;
+}
 
+.hoverable{
+    cursor: pointer !important;
+}
+
+.hoverable:hover{
+    color: #FF5252;
 }

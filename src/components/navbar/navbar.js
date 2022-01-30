@@ -5,10 +5,11 @@ import Login from '../Modals/Login/Login';
 import logo from '../../assets/images/logo.png'
 import { useCookies } from 'react-cookie';
 import axios from 'axios';
-
+import { useNavigate } from 'react-router-dom';
 
 function Navbar({user, setUser, station}) {
     const [cookies, setCookie,removeCookie] = useCookies(['user']);
+    const navigate = useNavigate();
 
     useEffect(()=>{
         if(cookies.name && cookies.password && cookies.email && cookies._id && !user)
@@ -54,17 +55,17 @@ function Navbar({user, setUser, station}) {
         </div>
         <div className="nav__right">
             <ul>
-                <li>Home</li>
+                <li onClick={()=>{navigate('/')}} className="hoverable">Home</li>
                 {!user &&
                     (<>
-                        <li><Login user={user} setUser={setUser} /></li>
-                        <li><Signup user={user} setUser={setUser} /></li>
+                        <li className="hoverable" ><Login user={user} setUser={setUser} /></li>
+                        <li className="hoverable" ><Signup user={user} setUser={setUser} /></li>
                     </>)
                 }
                 {
                     user &&
                     (<> <li>Welcome {user.name}</li>
-                        <li onClick={handleLogout} >Logout</li>
+                        <li className="hoverable" onClick={handleLogout} >Logout</li>
                     </>
                     )
                 }
